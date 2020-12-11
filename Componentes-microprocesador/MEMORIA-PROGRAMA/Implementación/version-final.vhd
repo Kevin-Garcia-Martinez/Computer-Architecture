@@ -4,13 +4,13 @@
 -- Create Date: 06.11.2020 11:08:42
 -- Design Name: Computer Processing Unit
 -- Module Name: memProg - PROGRAM
--- Project Name: Aritmetic Logic Unit - Adder and Subtractor Circuit
+-- Project Name: Program Memory
 -- Device: Nexys4 DDR (Digilent) FPGA (Field Programmable Gate Array)
 -- Device Model: XC7A100T -1CSG324C
 -- Device Family: Artix-7
 -- Speed: -1
 -- Package: CSG324
--- Version: Program Memory 
+-- Version: Final
 ----------------------------------------------------------------------------------
 -- La memoria de programa que se implementará tendrá las siguientes características:
 -- Un BUS de direcciones de 16 bits
