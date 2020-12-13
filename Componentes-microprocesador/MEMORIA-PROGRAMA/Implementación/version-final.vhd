@@ -4,13 +4,13 @@
 -- Create Date: 06.11.2020 11:08:42
 -- Design Name: Computer Processing Unit
 -- Module Name: memProg - PROGRAM
--- Project Name: Program Memory
+-- Project Name: Aritmetic Logic Unit - Adder and Subtractor Circuit
 -- Device: Nexys4 DDR (Digilent) FPGA (Field Programmable Gate Array)
 -- Device Model: XC7A100T -1CSG324C
 -- Device Family: Artix-7
 -- Speed: -1
 -- Package: CSG324
--- Version: Final
+-- Version: Program Memory 
 ----------------------------------------------------------------------------------
 -- La memoria de programa que se implementará tendrá las siguientes características:
 -- Un BUS de direcciones de 16 bits
@@ -27,7 +27,8 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity memProg is
-    Port ( A : in  STD_LOGIC_VECTOR (15 downto 0);
+-- Para fines prácticos pondremos el bus de direcciones de 8 bits
+    Port ( A : in  STD_LOGIC_VECTOR (7 downto 0);
            D : out STD_LOGIC_VECTOR (24 downto 0) );  
 end memProg;
 
@@ -121,7 +122,7 @@ architecture programa of memProg is
 
     begin
         -- Colocaremos la sentencia que se encargará de leer las instrucciones de nuestro programa
-        -- escrito en lenguaje Ensamblador dentro de la Memoria de Programa. 
+        -- escrito en lenguaje Ensamblador que están dentro de la Memoria de Programa. 
         -- El índice para leer datos/instrucciones de la Memoria de Programa nos lo indica el 
         -- BUS de direcciones que declaramos como 'A' -> Address, y este debe ser un tipo de dato
         -- entero, es por eso que utilizamos la función CONV_INTEGER(A) para convertir una señal

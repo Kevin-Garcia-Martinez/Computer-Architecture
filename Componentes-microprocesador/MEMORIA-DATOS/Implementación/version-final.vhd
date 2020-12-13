@@ -30,7 +30,8 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity memData is
-    GENERIC( NADDR : INTEGER := 16 ;
+-- Para efectos prácticos declararemos un bus de direcciones de 8 Bits
+    GENERIC( NADDR : INTEGER := 8 ;
              NDATA : INTEGER := 16 );
 
     Port ( ADDR   : in  STD_LOGIC_VECTOR (NADDR-1 downto 0);
@@ -49,7 +50,7 @@ architecture programa of memData is
     -- Se pueden realizar tanto escritura como lectura en la memoria RAM, por lo que no puede ser 
     -- Una declara como una constante 'CONSTANT', sino como una señal 'SIGNAL'
     SIGNAL M_DATOS : MEMORIA;
-
+    
     begin 
     -- Lista sensible del proceso: Señal de reloj 'CLK' para la operación de escritura y señal de CLEAR 'CLR'
     -- Cuando tenemos un circuito secuencial que utiliza una señal de reloj 'clk', la lista sensible del proceso
@@ -83,9 +84,8 @@ architecture programa of memData is
                 M_DATOS( CONV_INTEGER(ADDR) ) <= DIN;
             END IF;  
         END IF;
-
-    end process PMEMDAT;
-
+    END PROCESS PMEMDAT;
+   
     -- La lectura se realiza de manera asíncrona, es decir, no depende de la señal del reloj
     -- Realizamos la lectura de la memoria RAM en la dirección de memoria que se especifico 
     -- en el bus de direcciones 'ADDR' y el dato leído lo colocamos en el bus de datos de 
