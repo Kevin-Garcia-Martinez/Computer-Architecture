@@ -14,5 +14,7 @@ Microprocesador de arquitectura RISC de 16 bits tipo MIPS (Microprocessor withou
 •	Memoria de programa y memoria de datos separada, es decir, Arquitectura Harvard. El contador de programa puede direccionar hasta 64kwords. En memoria de datos se puede direccionar hasta 64kwords+2kwords usando brincos relativos.
 
 •	Ejecución de brincos condicionales en un solo ciclo de reloj.
+  • Semiciclo positivo: Se realiza la resta de los registros.
+  • Semiciclo negativo: Si se activa la bandera de la ALU correspondiente se realiza el salto. 
 
 #### Curso Impartido por el profesor Victor Hugo García Ortega.
